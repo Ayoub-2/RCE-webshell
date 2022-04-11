@@ -10,3 +10,9 @@ $ cd RCE-webshell
 $ pip install -r requirements
 $ python rce.py --help
 ```
+
+to set up a lab : 
+```bash
+$ cd docker-example
+$ ./build.sh 
+``` 
