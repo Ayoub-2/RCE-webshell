@@ -13,8 +13,13 @@ $ python rce.py --help
 
 to set up a lab : 
 ```bash
+# on linux
 $ cd docker-example
+$ chmod +x build.sh
 $ ./build.sh 
+# on windows Powershell
+$ cd docker-example
+$ ./build.ps1
 ``` 
 
 ## Manual
@@ -45,3 +50,9 @@ optional arguments:
                         The xpath including the result of a command
   -h, --help            show this help message and exit
 ```
+
+</br>
+
+### Thanks : 
+
+erseco
