@@ -37,7 +37,6 @@ class Shell :
         else : 
             home  = 'cd '+ home + ';' 
         payload = {self.parm:home +  command}
-        print(INFO(payload))
         try : 
             response = requests.get(self.url, headers=self.HEADERS, params=payload, verify=False )
         except  requests.exceptions.MissingSchema as e : 
@@ -60,6 +59,8 @@ class Shell :
         HOME=HOME.strip()
         while True : 
             command  = input(HOME + "$ ") 
+            if command.strip()=="exit" : 
+                exit()
             if "setcd" in command or 'cd' == command.strip().split(" ")[0] : 
                 nhome = command.split(" ")[1]
                 if '.' in nhome or ".." in nhome or '/' != nhome[0] : 
