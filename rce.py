@@ -61,13 +61,24 @@ class Shell :
             command  = input(HOME + "$ ") 
             if command.strip()=="exit" : 
                 exit()
-            if "setcd" in command or 'cd' == command.strip().split(" ")[0] : 
-                nhome = command.split(" ")[1]
-                if '.' in nhome or ".." in nhome or '/' != nhome[0] : 
-                    nhome = HOME +'/'+ nhome
-                    HOME = self.get_result('pwd' , nhome)
-                    HOME = HOME.strip()
-            print(self.get_result(command , HOME))
+            if ";" in command : 
+                commands = command.split(";")
+                for command in commands  : 
+                    if "setcd" in command or 'cd' == command.strip().split(" ")[0] : 
+                        nhome = command.split(" ")[1]
+                        if '.' in nhome or ".." in nhome or '/' != nhome[0] : 
+                            nhome = HOME +'/'+ nhome
+                            HOME = self.get_result('pwd' , nhome)
+                            HOME = HOME.strip()
+                    print(self.get_result(command , HOME))
+            else : 
+                if "setcd" in command or 'cd' == command.strip().split(" ")[0] : 
+                    nhome = command.split(" ")[1]
+                    if '.' in nhome or ".." in nhome or '/' != nhome[0] : 
+                        nhome = HOME +'/'+ nhome
+                        HOME = self.get_result('pwd' , nhome)
+                        HOME = HOME.strip()
+                print(self.get_result(command , HOME))
 
 
 
