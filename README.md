@@ -1,5 +1,5 @@
 # About this project 
-This tool helps you turn an rce trought url parametre to turn into an interactive shell using python
+This tool helps you turn an rce throught url parameter to turn into an interactive shell using python
 
 
 ## Installation 
